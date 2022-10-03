@@ -1,0 +1,462 @@
+------------------------------------------------------------------------
+
+title: "SOK-1004, høst 2022, Mappeoppgave 1"
+
+author: "55, 122, 54"
+
+format: pdf
+
+echo: true
+
+output: true
+
+editor: visual
+
+SOK1004 Mappeoppgave        Tekster er skrevet i Word og koding gjort i R så dette er en sammensetning som er veldig rotete. Skal fikses ved endelig produkt.
+
+Dette er samfunnsvitenskap, ikke naturvitenskap. Det er ikke alltid mulig å gi korte, konsise svar.
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Oppgave 1a Hva menes med inntektsulikhet i et land?
+
+Inntektsulikhet på korteste måte kan bli forklart som forskjellen mellom hvor mye rike tjener og fattige tjener. «Noen tjener lite, noen tjener mye»
+
+Inntektsulikhet sier noe om ulikhetene mellom hva folk tjener i løpet av en avgrenset tidsperiode, ofte ett år, og SSB kommer frem med at de bruker i hovedsak 3 måter på å måle ulikhet med p90p10, s80s20 og Gini koeffisient.
+
+Forklaringene på de måtene kommer senere.
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Oppgave 1b Hva er mulige grunner for at inntekten er fordelt ulikt i samfunnet?
+
+En opplagt mulig grunn til inntektsulikhet, er skattepolitikk, gitt at man her snakker om inntekt etter skatt. Skatt omfordeler inntekt, og vil normalt utjevne forskjeller. Unntak er jo da ting som såkalt koppskatt, der skatten er et fast kronebeløp, uavhengig av inntekt.
+
+En av de mulige hovedgrunnene til at inntekt er fordelt ulikt er teknologi. Teknologi i kapitalisme vil ofte få store inntekter mens de arbeiderne som nå fikk jobben sin forenklet fra teknologi vil da potentielt tjene mindre eller det kan bli mindre av de arbeiderne så lavere sysselsetting. Et eksempel på dette blir «Spinning jenny». Dette ledet til at mange arbeidere mistet jobbene sine siden arbeidet ble effektivisert dramatisk, men det gjorde også slik at man kunne omfordele arbeidskraften fra det arbeidet. De stedene uten den teknologien fikk da dramatisk mye vanskeligere konkurranse som da økte ulikhetene ved at de landene med «Spinning jenny» tjente mer mens de uten tjente mindre. Så la de til damp og da gikk det igjen eksplosiv vekst i ulikheter.
+
+«Den dominerende faktoren bak økte lønnsforskjeller, og dermed økte ulikheter, er på globalt nivå teknologi, ikke globalisering.» Dette kommer fra NHO teksten.
+
+Politikk Utdanning og generelt institusjoner. Fordelingsmekanismer
+
+arv Foreldres utdanning, barns valg osv. Ting som at lavutdannede foreldre for ofte lavutdannete barn.
+
+faglært/ufaglært gir ulikheter.
+
+NSW jobber øker andelen sysselsatte i bunnen av inntektsskalaen og dermed øker også ulikheter. NSW=Non standard work. Selvstendig næringsdrivende, deltidsansatte og midlertidig ansatte. Innvandring med tanke på inntekt generelt. Mye polske lønner og svenske deregulering (burde nevnes korte ord).
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Oppgave 1c Hvilke konsekvenser kan ulikhet i inntektsfordelingen føre til?
+
+Hva bør vi utdype? Er jo ekstremt mange ting å nevne og vi sliter litt Gigantiske konsekvenser Bør vi lage og legge til grafer ved her?
+
+Politisk polarisering. Lavere tillitt. Lykke. Vekst Lav, varierende og usikker inntekt kan også påvirke tilgangen til kreditt, herunder til bolig. Dermed kan økende ulikheter gi lavere boligbygging og lavere boliginvesteringer. lavere levestandard for mennesker og kortere levetid. Negativ innvirkning på økonomisk vekst
+
+Mindre tiltro til stat å myndigheter som leder til popularitet rundt alternativ valuta som kryptovaluta og håp om deflasjon. Mulig delvis grunn til lavere vekst med høy ulikhet.
+
+En mulig konsekvens er at flere vil utdanne seg til yrkene der lønna er høyere. Samfunnets ressurser omfordeles til der det antas å gi størst avkastning. Og for å snu på spørsmålet: hva ville skjedd dersom alle tjente det samme? De som studerer i årevis finansiert av studielån ville tape penger på utdanningen.
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Oppgave 2. Måling av ulikhet I datasettet fra OECD finner man 5 mål på inntektsulikhet: tre ulike Gini-koeffisienter, P90P10 og S80S20.
+
+Oppgave 2a Forklar hvordan Gini-koeffisientene beregnes og hvordan de bør tolkes. Hva måler P90P10 og S80S20?
+
+\-
+
+Gini-koeffisienten måler inntektsulikheter. Bør sammenlignes mellom variabler siden gini tallet alene sier svært lite. Gini-koeffisient beregnes kort forklart ved se på all inntekt og formue det er totalt sett i ett land, deretter se på hvordan dette er fordelt mellom folk.
+
+Gini-koeffisienten beregnes med formelen: Gini Koeffisienten = A / (A + B). A er området som befinner seg over Lorenz kurven og B er området under Lorenz kurven. Resultatet er ett tall som vil ligge mellom 0 og 1. Gini-koeffisienten måler inntektsulikheter mellom land.
+
+I P90P10 delder man opp befolkningen i ti like store deislier ut ifra inntekt. Forholdstallet beregnes ved å se på personen som har høyere inntekt enn 90 prosent av befolkingen og personen som har lavere enn 90 prosent av befolkingen. De resterende 20 prosentene av befolkningen derav 10 prosent med høyest og 10 prosent med lavest inntekt ser vekk i fra i dette ulikhetsmålet. Dette resulterer ofte til at det er lettere å måle ulikhet over tid enn ved andre ulikhetsmål.
+
+S80S20 er ett mål som viser forholdstallet mellom gjennomsnittsinntekten til de 20 prosent av befolkningen som har høyest og lavest inntekt. Det er gjerne små forskjeller mellom Gini-koeffisienten og dette ulikhetsmålet når man ser på utvikling i ulikhet.
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+Oppgave 2b Diskuter svakheter og styrker med disse målene på ulikhet. I hvilke situasjoner er hvert mål mest relevant?
+
+\-
+
+Gini er bare ett tall. Lorenz kurve. For lite data.
+
+Bør også se på skattesystems effekt på gini, omfordeling. Velferdssystem. Utdannelse, helsevesen osv
+
+Fra Lorenz kurven så har vi også, Markedincome, Disposable income, Final income (du substraherer merverdiavgift og legger til verdien på offentlige tjenester)
+
+Et mulig mål på inntektsulikhet vil kunne være differansen mellom høyeste observerte lønn, og laveste observerte lønn. Men en slik differanse gir lite innsikt. En mer hensiktsmessig metode vil kunne være å måle gjennomsnitts- eller medianlønn, og måle spredningen rundt denne. usikker på hvilket spredningsmål man her bør benytte. Inntektsfordelingen følger neppe normalfordelingen, slik at standardavvik ikke er like egnet som spredningsmål.
+
+Verdi av offentlige tjenester. Fattigste bruker mest av offentlige tjenester, dette gir utslag som ikke vises i gini.
+
+Marked gini vs disposable gini vs final income gini.
+
+Innvandring skitner data. Mange faktorer blir ikke fanget opp og skitner data.
+
+Kilde: Verden og oss SSB
+
+Oppgave 3. Inntektsulikhet i Norge 2008-2019.
+
+Her sletter vi først minne så laster vi inn Tidyverse og Cowplot slik at vi får ordnet grafer finere. Vi kjører også "Supressmessages" for å gjøre konsollen litt renere.
+
+```{r}
+
+rm(list=ls())
+library(tidyverse)
+suppressMessages(library(tidyverse)) 
+#install.packages("cowplot") Fjern # for å installere cowplot om det mangler.
+library(cowplot)
+suppressMessages(library(cowplot)) 
+
+
+```
+
+Her laster vi inn datasettet og lagrer det som oecd_n
+
+```{r}
+#Nå henter vi inn data fra URL og leser da det og lagrer som oecd_n
+url <- "https://raw.githubusercontent.com/uit-sok-1004-h22/uit-sok-1004-h22.github.io/main/data/oecd_data_nor.csv"
+
+oecd_n <- url %>% 
+  read_csv()
+```
+
+Oppgave 3a
+
+```{r}
+
+
+p1 <- oecd_n %>% # data
+  filter(MEASURE =="P90P10") %>% # velger ut de observasjonene vi vil ha
+  ggplot(aes(x = Year, y=Value, color=MEASURE))+ # definer aksene
+  geom_point()+ # plott som punkt
+  scale_x_continuous(breaks=c(2008, 2010, 2012, 2014, 2016, 2018))+ # unngår at årstall blir gjort om til desimal
+  labs (title = " Befolkningstall for Norge, 2008-2019", y = "Antall", x= "År")+ # tittel på figuren og benevning av aksene
+  facet_wrap(~ factor (AGE, (levels=c("TOT", "WA", "OLD"))), # lag tre paneler etter alder i fornuftig rekkefølge med passende titler 
+                       labeller = as_labeller(
+                         c("TOT" = "Alle", 
+                           "WA" = "Arbeidere", 
+                           "OLD" = "Pensjonert")))+ # tilpass tittel på panelene
+  theme(legend.position = "bottom") # flytt legende for at størrelsen på plottene blir bra
+
+
+p1
+
+```
+
+Gi en nøyaktig beskrivelse av figuren med de tre Gini-målene. Bruk figuren til å svare på følgende spørsmål:
+
+-   Hva viser Gini-målene om utviklingen av ulikhet i Norge?
+
+-   Hvordan forklarer man eventuelle forskjeller mellom de tre Gini-koeffisientene?
+
+-   Er det forskjeller i ulikhet mellom arbeidere og pensjonister?
+
+-   Hvilken rolle spiller samfunnets institusjoner, for eksempel skatte- og pensjonssystemet, for utjevning av ulikhet mellom arbeidere og pensjonister?
+
+Oppgave 3b
+
+Her lager vi to figurer der vi bruker både P90P10 og S80S20 slik at vi ser forskjellen som vises mellom målene. koden står under
+
+```{r}
+p2 <- oecd_n %>% # data
+  filter(MEASURE =="S80S20") %>% # velg ut de observasjonene vi vil ha
+  ggplot(aes(x = Year, y=Value, color=MEASURE))+ # definer aksene
+  geom_point()+ # plott som punkt
+  scale_x_continuous(breaks=c(2008, 2010, 2012, 2014, 2016, 2018))+ # unngår at årstall blir gjort om til desimal
+  labs (title = " Befolkningstall for Norge, 2008-2019", y = "Antall", x= "År")+ # tittel på figuren og benevning av aksene
+  facet_wrap(~ factor (AGE, (levels=c("TOT", "WA", "OLD"))), # lag tre paneler etter alder i fornuftig rekkefølge med passende titler 
+                       labeller = as_labeller(
+                         c("TOT" = "Alle", 
+                           "WA" = "Arbeidere", 
+                           "OLD" = "Pensjonert")))+ # tilpass tittel på panelene
+  theme(legend.position = "bottom") # flytt legende for at størrelsen på plottene blir bra
+
+
+
+plot_grid(p1, p2, nrow = 2)
+```
+
+## Oppgave 3b
+
+Lag en ny figur hvor du bruker de andre ulikhetsmålene (P90P10 og S80S20) til å undersøke ulikhet mellom arbeidere og pensjonister i tidsperioden 2008-2019. Her kan du for eksempel tegne et spredningsplott for hver gruppe. Bruk figuren som grunnlag for å beskrive inntektsulikhet. Er svarene dine det samme som i 3a? Hvorfor/hvorfor ikke?
+
+\--
+
+Oppgave 4. Tromsø kommune skattetall 2015.
+
+Vi starter med å hente skattetall og lagre de i et datasett
+
+```{r}
+url <- "https://raw.githubusercontent.com/uit-sok-1004-h22/uit-sok-1004-h22.github.io/main/data/skatt_troms_2015.RDS"
+
+skatt_troms_2015 <- url %>%
+  url() %>%
+  gzcon() %>% 
+  readRDS() 
+  
+  
+```
+
+Vi går videre for å bare bruke Tromsø kommune og lager et nytt datasett med navnet Tromso.
+
+```{r}
+tromso <- skatt_troms_2015
+
+tromso <- tromso %>%
+  filter(kommnr == "1902")
+```
+
+---
+title: "54_Mappeoppgave_1"
+format: html
+editor: visual
+---
+
+## mappeoppgave
+
+```{r}
+rm(list=ls())
+library(tidyverse)
+library(cowplot)
+library(gglorenz)
+```
+
+```{r}
+url <- "https://raw.githubusercontent.com/uit-sok-1004-h22/uit-sok-1004-h22.github.io/main/data/oecd_data_nor.csv"
+
+oecd_n <- url %>% 
+  read_csv()
+
+url <- "https://raw.githubusercontent.com/uit-sok-1004-h22/uit-sok-1004-h22.github.io/main/data/skatt_troms_2015.RDS"
+
+skatt_troms_2015 <- url %>%
+  url() %>%
+  gzcon() %>% 
+  readRDS()
+```
+
+```{r}
+oecd_n %>% # data
+  filter(MEASURE =="IND") %>% # velg ut de observasjonene vi vil ha
+  ggplot(aes(x = Year, y=Value, color=MEASURE))+ # definer aksene
+  geom_point()+ # plott som punkt
+  scale_x_continuous(breaks=c(2008, 2010, 2012, 2014, 2016, 2018))+ # unngår at årstall blir gjort om til desimal
+  labs (title = " Befolkningstall for Norge, 2008-2019", y = "Antall", x= "År")+ # tittel på figuren og benevning av aksene
+  facet_wrap(~ factor (AGE, (levels=c("TOT", "WA", "OLD"))), # lag tre paneler etter alder i fornuftig rekkefølge med passende titler 
+                       labeller = as_labeller(
+                         c("TOT" = "Alle", 
+                           "WA" = "Arbeidere", 
+                           "OLD" = "Pensjonert")))+ # tilpass tittel på panelene
+  theme(legend.position = "bottom") # flytt legende for at størrelsen på plottene blir bra
+
+
+```
+
+```{r}
+
+
+p1 <- oecd_n %>%
+   filter(MEASURE =="P90P10") %>% # velg ut de observasjonene vi vil ha
+  ggplot(aes(x = Year, y=Value, color=MEASURE))+ # definer aksene
+  geom_point()+ # plott som punkt
+  scale_x_continuous(breaks=c(2008, 2010, 2012, 2014, 2016, 2018))+ # unngår at årstall blir gjort om til desimal
+  labs (title = " Befolkningstall for Norge, 2008-2019", y = "Antall", x= "År")+ # tittel på figuren og benevning av aksene
+  facet_wrap(~ factor (AGE, (levels=c("TOT", "WA", "OLD"))), # lag tre paneler etter alder i fornuftig rekkefølge med passende titler 
+                       labeller = as_labeller(
+                         c("TOT" = "Alle", 
+                           "WA" = "Arbeidere", 
+                           "OLD" = "Pensjonert")))+ # tilpass tittel på panelene
+  theme(legend.position = "bottom") # flytt legende for at størrelsen på plottene blir bra
+
+
+p2 <- oecd_n %>%
+   filter(MEASURE =="S80S20") %>% # velg ut de observasjonene vi vil ha
+  ggplot(aes(x = Year, y=Value, color=MEASURE))+ # definer aksene
+  geom_point()+ # plott som punkt
+  scale_x_continuous(breaks=c(2008, 2010, 2012, 2014, 2016, 2018))+ # unngår at årstall blir gjort om til desimal
+  labs (title = " Befolkningstall for Norge, 2008-2019", y = "Antall", x= "År")+ # tittel på figuren og benevning av aksene
+  facet_wrap(~ factor (AGE, (levels=c("TOT", "WA", "OLD"))), # lag tre paneler etter alder i fornuftig rekkefølge med passende titler 
+                       labeller = as_labeller(
+                         c("TOT" = "Alle", 
+                           "WA" = "Arbeidere", 
+                           "OLD" = "Pensjonert")))+ # tilpass tittel på panelene
+  theme(legend.position = "bottom") # flytt legende for at størrelsen på plottene blir bra
+
+plot_grid(p1, p2, nrow = 2)
+```
+
+```{r}
+
+```
+
+```{r}
+
+
+url <- "https://raw.githubusercontent.com/uit-sok-1004-h22/uit-sok-1004-h22.github.io/main/data/skatt_troms_2015.RDS"
+
+skatt_troms_2015 <- url %>%
+  url() %>%
+  gzcon() %>% 
+  readRDS()
+
+tromso <-  filter(skatt_troms_2015, kommnr == "1902")
+
+tromso <- tromso %>%
+  
+
+  mutate(netto = inntekt-skatt)
+  
+tromso[tromso < 0] <- 0
+
+df <- tromso %>%
+  select(inntekt, netto)
+
+tromso %>%
+  
+  ggplot(aes(x = fodt, y = netto/1000, color = inntekt/1000))+
+  
+  geom_point()+
+  
+  
+  xlim(1970, 2000)
+  
+
+# oppgave 4b
+
+df <- tromso %>%
+  select(inntekt) %>% 
+  quantile(probs = seq(0,1, .01), na.rm=TRUE)
+
+
+df <- as_tibble(df)
+
+df <- df %>% 
+  add_column(Persentil=c(0:100))
+
+df <- df %>% 
+  rename(inntekt_fr_skatt=value)
+
+
+df %>% 
+  ggplot(aes(x=Persentil,y=inntekt_fr_skatt/1000)) +
+  geom_col()+
+  labs (title = "Inntektsfordeling i Tromsø 2015 (fr skatt)",
+        y = "Inntekt (1000kr)", x= "Persentil")+
+  theme_minimal()
+```
+
+```{r}
+tromso <-  filter(skatt_troms_2015, kommnr == "1902")
+
+```
+
+```{r}
+
+tromso <- tromso %>%
+  
+
+  mutate(netto = inntekt-skatt)
+  
+tromso[tromso < 0] <- 0
+
+df <- tromso %>%
+  select(inntekt, netto)
+
+```
+
+```{r}
+
+tromso %>%
+  
+  ggplot(aes(x = fodt, y = netto/1000, color = inntekt/1000))+
+  
+  geom_point()+
+  
+  
+  xlim(1970, 2000)
+  
+```
+
+##### 
+
+```{r}
+
+```
+
+```{r}
+# oppgave 4b
+
+df <- tromso %>%
+  select(netto) %>%
+  quantile(probs = seq(0,1, .01), na.rm=TRUE)
+
+
+df <- as_tibble(df)
+
+df <- df %>% 
+  add_column(Persentil=c(0:100))
+
+df <- df %>% 
+  rename(inntekt_etter_skatt=value)
+
+
+df %>% 
+  ggplot(aes(x=Persentil,y=inntekt_etter_skatt/1000)) +
+  geom_col()+
+  labs (title = "Inntektsfordeling i Tromsø 2015 (etter skatt)",
+        y = "Inntekt (1000kr)", x= "Persentil")+
+  theme_minimal()
+
+################################################################
+df1 <- tromso %>%
+  select(inntekt) %>% 
+  quantile(probs = seq(0,1, .01), na.rm=TRUE)
+
+
+df1 <- as_tibble(df1)
+
+df1 <- df1 %>% 
+  add_column(Persentil=c(0:100))
+
+df1 <- df1 %>% 
+  rename(inntekt_fr_skatt=value)
+
+
+df1 %>% 
+  ggplot(aes(x=Persentil,y=inntekt_fr_skatt/1000)) +
+  geom_col()+
+  labs (title = "Inntektsfordeling i Tromsø 2015 (fr skatt)",
+        y = "Inntekt (1000kr)", x= "Persentil")+
+  theme_minimal()
+```
+
+```{r}
+
+
+#
+
+gini_for_skatt <- ggplot(tromso, aes(inntekt))+
+  stat_lorenz()+ # tegner Lorenz
+  annotate_ineq(tromso$inntekt)+ # beregner Gini
+  labs (x="andel av befolkningen", y= "andel av inntekt", title = "Lorenz-kurve, Tromsø kommune 2015")+
+  theme_minimal()
+
+
+##
+
+gini_etter_skatt <- ggplot(tromso, aes(netto))+
+  stat_lorenz()+ # tegner Lorenz
+  annotate_ineq(tromso$netto)+ # beregner Gini
+  labs (x="andel av befolkningen", y= "andel av inntekt etter skatt", title = "Lorenz-kurve, Tromsø kommune 2015")+
+  theme_minimal()
+
+
+gini_norge <- ggplot(oecd_n, aes("GINI"))+
+  stat_lorenz()+
+  annotate_ineq(oecd_n)
+
+
+
+plot_grid(gini_etter_skatt, gini_for_skatt, gini_norge)
+###
+```
