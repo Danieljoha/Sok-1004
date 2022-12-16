@@ -24,7 +24,9 @@ Reproduser en oppdatert versjon av Figur 1.1 "Timeverksproduktivitet, markedsret
 
 Hvorfor trekker Produktivitetskommisjon fra produksjonen av boligtjenester, offentlig etterspørsel, og inntekter fra olje og gass når de beregner produktivitet?
 
-*\[Svar på oppgave Ia her\]*
+Produktivitetskommisjonen trekker bort boligtjenester og offentlig sektor siden de ikke omsettes i markeder og det leder til at produktivitetstallene der er basert på kostnader.
+
+Olje og gass er også sett bort ifra siden en stor del av produksjonsverdien kan være avkastning av naturressurser.
 
 ## Oppgave Ib
 
@@ -299,3 +301,7 @@ plot1 <- df %>%
 
 plot1
 ```
+
+Vi kan se i figuren som er lagd her at det er noen avvik mellom figuren her og den i NOU men den er tilnærmet lik.
+
+Vi kan også se at etter 2013 så har det ikke bedret seg. Vi har fremdeles en lavere økning i produktivitet enn før med lite i figuren som tyder på at vi når tilbake til tallene vi fikk på starten av 2000 tallet.
