@@ -50,6 +50,7 @@ library(rjstat)
 library(janitor)
 library(gdata)
 library(httr) 
+library(dplyr)
 ```
 
 Vi bruker dataene fra [Tabell 0313: Konsumprisindeksen fra SSB](https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen). Jeg laster ned ved hjelp av API. Se [brukerveiledningen](https://www.ssb.no/api/pxwebapi/_/attachment/inline/019c05e0-35ad-4757-87a0-ba7fbf4a68e2:46a164479bc10a67eee4b472cd891f001ca19da5/Api_brukerveiledning.pdf) her.
@@ -202,14 +203,23 @@ Nå er det deres tur til å rydde. Slett variablene `year` og `month`. Gi variab
 ```{r}
 # løs oppgave II her
 
+df_navn <- df %>%
+  names() 
 
-
-df <- df %>%                                  #Omskriver df og skifter navn på
-  rename("vekt" = "value") %>%                #value til vekt og fjerner year month
+df <- df %>%                                  #Omskriver df og skifter navn på kolonner
+  rename(gruppe = konsumgruppe) %>%                
+  rename(var = statistikkvariabel) %>% 
+  rename(verdi = value) %>% 
   select(-year, -month) %>%                   #og filter til etter 2011.
   filter(dato >= as.Date("2011-01-01"))
 
 
+
+df <- df %>%
+  select(dato,gruppe,var,verdi) 
+  
+var_navn <- df$var %>%
+  unique()
 
 
 ```
@@ -225,12 +235,30 @@ Del vektene i `df` på 1000, og sjekk at de summerer seg til om lag `1` for hver
 ```{r}
 # besvar oppgave IIIa her
 
+# deler på 1000, erstatter NA med 0
+df_vekter <- df %>% 
+  filter(var %in% last(var_navn)) %>%
+  mutate(verdi = verdi/1000) %>%
+  mutate(verdi = replace(verdi,is.na(verdi),0))
 
-oppgave_3a <- df %>%    
-  filter(statistikkvariabel == "Konsumprisindeks (vekter)") %>% #Henter bare vekter
-  mutate(vekt = vekt/1000)  %>%      #deler vekt på 1000 for å sjekke avvik
-  group_by(dato) %>%              #grupperer med dato
-  summarize(sjekk <- sum(vekt))     #summer opp beløpene på dato.
+# limer de nye vektene tilbake inn i df 
+df <- df %>%
+  filter(var %in% first(var_navn)) %>%
+  rbind(df_vekter)
+
+# sjekker at vektene summerer seg til om lag 1
+sjekk <- df %>%
+  filter(var %in% last(var_navn)) %>%
+  group_by(dato) %>%
+  summarise(sum=sum(verdi)) 
+
+max <- max(sjekk$sum)
+min <- min(sjekk$sum)
+maxdiff <- max(c(abs(1-max),abs(1-min)))
+  
+print(max)
+print(min)
+print(maxdiff)
 
 
 ```
@@ -244,31 +272,32 @@ Beregn en totalindeks hvor dere bruker vektene og verdiene på prisindeks i form
 
 
 
+df_vekter <- df_vekter %>%  
+  select(dato,gruppe,verdi)%>%
+  arrange(dato,gruppe)
 
+df_indeks <- df %>%
+  filter(var %in% first(var_navn)) %>%
+  select(dato,gruppe,verdi) %>%
+  mutate(verdi = replace(verdi,is.na(verdi),0))%>%
+  arrange(dato,gruppe)
 
-df_vekter <- df %>%
-  filter(statistikkvariabel == "Konsumprisindeks (vekter)") %>%
-  mutate(vekt = vekt/1000) 
+df_total <- df_indeks %>%
+  select(dato,gruppe) %>%
+  mutate(verdi = df_indeks$verdi*df_vekter$verdi) %>%
+  group_by(dato) %>%
+  summarize(verdi = sum(verdi)) %>%
+  mutate(gruppe = "KPI")
 
-df_index <- df %>%
-  filter(statistikkvariabel == "Konsumprisindeks (2015=100)") %>% 
-  rename(index = vekt)
+rebaser <- 100/df_total$verdi[df_total$dato == as.Date("2015-06-01")]
 
+df_total <- df_total %>%
+  mutate(verdi = verdi*rebaser)
 
-df_total <- df_vekter %>% 
-  cbind(df_index$index) %>% 
-  mutate(indeks = df_index$index*vekt) %>% 
-  select(-statistikkvariabel)
-
-
-df_sum <- df_total %>%
-  group_by(dato) %>% 
-  summarize(index = sum(indeks, na.rm=TRUE))
-
-df_sum %>%
-  ggplot(aes(x=dato, y=index))+
+df_total %>%
+  ggplot(aes(x=dato,y=verdi)) +
   geom_line() +
-  theme_bw()
+  theme_minimal()
 
 
 
@@ -283,18 +312,42 @@ Lag en figur som illustrerer vekstbidraget til konsumgruppen "Elektrisitet, inkl
 ```{r}
 # Besvar oppgave IV her
 
-Elektrisitet_plot <- df %>%
-  filter(konsumgruppe == "Elektrisitet inkludert nettleie") %>%
-  filter(statistikkvariabel == "Konsumprisindeks (2015=100)") #filter ut ekeltrisitet, og filtrerer ut vektene, lagrer det i nytt datasett.
+df_indeks <- df_indeks %>% 
+  arrange(gruppe,dato)
 
+df_vekter <- df_vekter %>% 
+  arrange(gruppe,dato)
 
-Elektrisitet_plot %>%
-  ggplot(aes(x = dato, y = vekt)) +
-  geom_line() +
-  labs(x = "Årstall", y = "KPI", title = "KPI til elektrisitet", subtitle = "KPI til elektrisitet standarår 2015.") +
-  theme_bw()
-#plotter kpi verdiene til elektrisitet.
+df_bidrag <- df_indeks %>%
+  mutate(verdi = (100*(verdi - dplyr::lag(verdi,12))*dplyr::lag(df_vekter$verdi,12)/dplyr::lag(df_total$verdi,12)))
 
+gruppe_navn <- df_indeks$gruppe %>% 
+  unique()
+
+df_dtotal <- df_total %>%
+  mutate(verdi = 100*(verdi - dplyr::lag(verdi,12))/dplyr::lag(verdi,12)) %>%
+  filter(dato >= as.Date("2012-01-01")) 
+
+df_plot <- df_bidrag %>%
+  filter(dato >= as.Date("2012-01-01")) %>%
+  filter(gruppe == gruppe_navn[22]) %>%
+  rbind(df_dtotal)
+
+```
+
+```{r, warning=False}
+df_plot %>%
+  
+  ggplot(aes(x=dato,y=verdi,color=gruppe)) +
+  
+  geom_line(size = 1.5) +
+  
+  geom_hline(yintercept=0) + 
+  
+  labs(title = "Kraftprisens bidrag til KPI", subtitle = "Tolvmåneders vekst. Prosent. KPI og bidrag fra elektrisitet, inkludert nettleie. 
+Januar 2012 - August 2022.", x = "År", y = "Tolvmåneders endring, prosent", color = "") +
+  
+  theme(legend.position="bottom") 
 ```
 
 I Y aksen så ser vi KPI på energi, med dato på X aksen. Vi ser at den blir vært blå i slutten av 2021 som tyder på at den blir svært vektlagt i kpi som viser høy energipris som korrelerer med høy kpi. Grafen her mangler info på KPI men jeg fant ikke ut hvordan jeg fikk lagt til kpi i samme graf.
