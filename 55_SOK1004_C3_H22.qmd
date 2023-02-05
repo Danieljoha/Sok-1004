@@ -319,13 +319,13 @@ df_vekter <- df_vekter %>%
   arrange(gruppe,dato)
 
 df_bidrag <- df_indeks %>%
-  mutate(verdi = (100*(verdi - dplyr::lag(verdi,12))*dplyr::lag(df_vekter$verdi,12)/dplyr::lag(df_total$verdi,12)))
+  mutate(verdi = (100*(verdi - lag(verdi,12))*lag(df_vekter$verdi,12)/lag(df_total$verdi,12)))
 
 gruppe_navn <- df_indeks$gruppe %>% 
   unique()
 
 df_dtotal <- df_total %>%
-  mutate(verdi = 100*(verdi - dplyr::lag(verdi,12))/dplyr::lag(verdi,12)) %>%
+  mutate(verdi = 100*(verdi - lag(verdi,12))/lag(verdi,12)) %>%
   filter(dato >= as.Date("2012-01-01")) 
 
 df_plot <- df_bidrag %>%
